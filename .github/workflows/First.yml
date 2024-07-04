@@ -10,9 +10,25 @@ jobs:
               uses: actions/setup-node@v4.0.2
             - name: Install Dependencies
               run: npm install
-            - name: npm Lint
-              run: npm run lint
             - name: Test
               run: npm test
-            - name: Build Node
+    Lint:
+        needs: Test
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4.1.7
+            - name: Install NodeJs
+              uses: actions/setup-node@v4.0.2
+            - name: Lint
+              run: npm run lint
+    Build:
+        needs: Lint
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4.1.7
+            - name: Install NodeJs
+              uses: actions/setup-node@v4.0.2
+            - name: Build
               run: npm run build
