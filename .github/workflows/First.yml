@@ -10,8 +10,8 @@ jobs:
               uses: actions/setup-node@v4.0.2
             - name: Install Dependencies
               run: npm install
-            - name: npm run lint
-              run: npm lint
+            - name: npm Lint
+              run: npm run lint
             - name: Test
               run: npm test
             - name: Build Node
