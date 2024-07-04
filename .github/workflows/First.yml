@@ -4,11 +4,11 @@ jobs:
     Test:
         runs-on: ubuntu-latest
         steps:
-            - name: Checkout de Repositorio
+            - name: Checkout repository
               uses: actions/checkout@v4.1.7
-            - name: Instalar NodeJS
+            - name: Install NodeJs
               uses: actions/setup-node@v4.0.2
-            - name: Instalar Dependencias
+            - name: Install Dependencies
               run: npm install
-            - name: NPM Test
+            - name: Test
               run: npm test
