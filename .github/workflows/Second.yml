@@ -7,4 +7,6 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Output Context
-              run: echo "${{toJson(github)}}"        
+              run: echo "${{toJson(github)}}"
+            - name: Output Issue
+              run: echo "${{toJson(inputs.event)}}" to target:${{inputs.issue}}
